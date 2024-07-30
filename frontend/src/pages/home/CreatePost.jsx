@@ -4,6 +4,9 @@ import { CiImageOn } from "react-icons/ci";
 import { BsEmojiSmileFill } from "react-icons/bs";
 import { useMutation, useQuery, useQueryClient } from '@tanstack/react-query';
 import toast from 'react-hot-toast';
+
+const  apiurl = import.meta.env.API_URL
+
 function CreatePost() {
   	const [text, setText] = useState("");
 	const [img, setImg] = useState(null);
@@ -15,7 +18,7 @@ function CreatePost() {
 	const {mutate:createPost, isPending, isError, error} = useMutation({
 		mutationFn:async({text, img})=>{
 			try {
-				const res = await fetch("api/posts/create", {
+				const res = await fetch(apiurl+"api/posts/create", {
 					method:"POST",
 					headers: {
 						"Content-Type": "application/json",

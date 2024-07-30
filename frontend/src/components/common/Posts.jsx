@@ -2,22 +2,24 @@ import React, { useEffect } from 'react'
 import Post from "./Post";
 import PostSkeleton from "../skeletons/PostSkeleton";
 import { useQuery } from '@tanstack/react-query'
+const  apiurl = import.meta.env.API_URL
+
 function Posts({feedType, username, userId}) {
 	const getPostEndPoint = ()=>{
 		if(feedType == "forYou"){
-			return "/api/posts/all";
+			return apiurl+"/api/posts/all";
 		}
 		else if(feedType == "following"){
-			return "/api/posts/following";
+			return apiurl+"/api/posts/following";
 		}
 		else if(feedType == "posts"){
-			return `/api/posts/user/${username}`;
+			return apiurl+`/api/posts/user/${username}`;
 		}
 		else if(feedType == "likes"){
-			return `/api/posts/likes/${userId}`;
+			return apiurl+`/api/posts/likes/${userId}`;
 		}
 		else{
-			return "/api/posts/all";
+			return apiurl+"/api/posts/all";
 		}
 	}
 	const POST_ENDPOINT = getPostEndPoint();
