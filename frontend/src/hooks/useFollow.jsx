@@ -9,7 +9,8 @@ function useFollow() {
         mutationFn:async(userId)=>{
             try {
                 const res = await fetch(apiUrl+`/api/users/follow/${userId}`, {
-                    method:'POST'
+                    method:'POST',
+                    credentials:'include'
                 })
                 const data = await res.json();
                 if(!res.ok){
