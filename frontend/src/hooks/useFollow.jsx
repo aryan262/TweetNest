@@ -1,12 +1,13 @@
 import toast from "react-hot-toast";
 import { useMutation, useQueryClient } from "@tanstack/react-query";
+const apiUrl = 'https://tweetnest-t9oh.onrender.com'
 
 function useFollow() {
     const queryClient = useQueryClient();
     const {mutate:follow, isPending} = useMutation({
         mutationFn:async(userId)=>{
             try {
-                const res = await fetch(`/api/users/follow/${userId}`, {
+                const res = await fetch(apiUrl+`/api/users/follow/${userId}`, {
                     method:'POST'
                 })
                 const data = await res.json();

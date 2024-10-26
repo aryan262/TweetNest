@@ -10,6 +10,8 @@ import { useMutation, useQuery, useQueryClient } from '@tanstack/react-query';
 import toast from 'react-hot-toast';
 import LoadingSpinner from './LoadingSpinner';
 import { formatPostDate } from '../../utils/db/date';
+const apiUrl = 'https://tweetnest-t9oh.onrender.com'
+
 function Post({post}) {
     const [comment, setComment] = useState("");
 	const {data:authUser} = useQuery({queryKey:["authUser"]});
@@ -73,7 +75,7 @@ function Post({post}) {
 	const {mutate:commentPost, isPending:isCommenting} = useMutation({
 		mutationFn:async()=>{
 			try {
-				const res = await fetch(`/api/posts/comment/${post._id}`, {
+				const res = await fetch(apiUrl+`/api/posts/comment/${post._id}`, {
 					method:"POST",
 					headers:{
 						"Content-Type":"application/json"

@@ -5,7 +5,8 @@ import { BsEmojiSmileFill } from "react-icons/bs";
 import { useMutation, useQuery, useQueryClient } from '@tanstack/react-query';
 import toast from 'react-hot-toast';
 
-const  apiurl = import.meta.env.API_URL
+const apiUrl = 'https://tweetnest-t9oh.onrender.com'
+
 
 function CreatePost() {
   	const [text, setText] = useState("");

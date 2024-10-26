@@ -5,6 +5,7 @@ import { MdOutlineMail, MdPassword, MdDriveFileRenameOutline } from "react-icons
 import { FaUser } from "react-icons/fa";
 import {useMutation, useQueryClient } from "@tanstack/react-query";
 import toast from "react-hot-toast";
+const apiUrl = 'https://tweetnest-t9oh.onrender.com'
 
 function SignUpPage() {
     const [formData, setFormData] = useState({
@@ -17,7 +18,7 @@ function SignUpPage() {
 	const {mutate, isError, isPending, error} = useMutation({
 		mutationFn:async({email, username, fullName, password})=>{
 			try {
-				const res = await fetch("/api/auth/signup", {
+				const res = await fetch(apiUrl+"/api/auth/signup", {
 					method:"POST",
 					headers:{
 						"Content-Type":"application/json",
