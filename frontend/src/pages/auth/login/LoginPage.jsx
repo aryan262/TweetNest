@@ -4,7 +4,7 @@ import XSvg from "../../../components/svgs/X";
 import { MdOutlineMail, MdPassword } from "react-icons/md";
 import { useMutation, useQueryClient } from "@tanstack/react-query";
 
-const apiUrl = 'https://tweetnest-t9oh.onrender.com'
+const apiUrl = ''
 
 
 function LoginPage() {
@@ -16,7 +16,7 @@ function LoginPage() {
 	const {mutate:loginMutation, isPending, isError, error} = useMutation({
 		mutationFn: async({username, password})=>{
 			try {
-				const res = await fetch(apiUrl+"/api/auth/login", {
+				const res = await fetch("/api/auth/login", {
 					method: "POST",
 					headers: {
 						"Content-Type": "application/json",

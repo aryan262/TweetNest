@@ -2,25 +2,25 @@ import React, { useEffect } from 'react'
 import Post from "./Post";
 import PostSkeleton from "../skeletons/PostSkeleton";
 import { useQuery } from '@tanstack/react-query'
-const apiUrl = 'https://tweetnest-t9oh.onrender.com'
+const apiUrl = ''
 
 
 function Posts({feedType, username, userId}) {
 	const getPostEndPoint = ()=>{
 		if(feedType == "forYou"){
-			return apiUrl+"/api/posts/all";
+			return "/api/posts/all";
 		}
 		else if(feedType == "following"){
-			return apiUrl+`/api/posts/following`;
+			return `/api/posts/following`;
 		}
 		else if(feedType == "posts"){
-			return apiUrl+`/api/posts/user/${username}`;
+			return `/api/posts/user/${username}`;
 		}
 		else if(feedType == "likes"){
-			return apiUrl+`/api/posts/likes/${userId}`;
+			return `/api/posts/likes/${userId}`;
 		}
 		else{
-			return apiUrl+`/api/posts/all`;
+			return `/api/posts/all`;
 		}
 	}
 	const POST_ENDPOINT = getPostEndPoint();

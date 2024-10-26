@@ -21,7 +21,7 @@ app.use(express.json({limit:"20mb"}))
 app.use(express.urlencoded({extended:true}))
 app.use(cors(
     {
-        origin: process.env.FRONTEND_URL,
+        origin: 'https://tweetnest.vercel.app',
         credentials: true,
     }
 ));
