@@ -10,7 +10,8 @@ import { useMutation, useQuery, useQueryClient } from '@tanstack/react-query';
 import toast from 'react-hot-toast';
 import LoadingSpinner from './LoadingSpinner';
 import { formatPostDate } from '../../utils/db/date';
-const apiUrl = ''
+const apiUrl = 'https://tweetnest-t9oh.onrender.com'
+
 
 function Post({post}) {
     const [comment, setComment] = useState("");
@@ -24,7 +25,7 @@ function Post({post}) {
 	const {mutate:deletePost, isPending:isDeleting} = useMutation({
 		mutationFn:async()=>{
 			try {
-				const res = await fetch(`/api/posts/${post._id}`, {
+				const res = await fetch(apiUrl+`/api/posts/${post._id}`, {
 					method:"DELETE"
 				})
 				const data = res.json();
@@ -47,7 +48,7 @@ function Post({post}) {
 	const {mutate:likePost, isPending:isLiking} = useMutation({
 		mutationFn:async()=>{
 			try {
-				const res = await fetch(`/api/posts/like/${post._id}`, {
+				const res = await fetch(apiUrl+`/api/posts/like/${post._id}`, {
 					method:"POST",
 				})
 				const data = await res.json();
@@ -78,7 +79,7 @@ function Post({post}) {
 	const {mutate:commentPost, isPending:isCommenting} = useMutation({
 		mutationFn:async()=>{
 			try {
-				const res = await fetch(`/api/posts/comment/${post._id}`, {
+				const res = await fetch(apiUrl+`/api/posts/comment/${post._id}`, {
 					method:"POST",
 					headers:{
 						"Content-Type":"application/json"

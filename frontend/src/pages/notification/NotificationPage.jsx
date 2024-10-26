@@ -5,7 +5,8 @@ import { FaUser } from "react-icons/fa";
 import { FaHeart } from "react-icons/fa6";
 import { useMutation,useQuery, useQueryClient } from "@tanstack/react-query";
 import toast from "react-hot-toast";
-const apiUrl = ''
+const apiUrl = 'https://tweetnest-t9oh.onrender.com'
+
 
 function NotificationPage() {
 	const queryClient = useQueryClient()
@@ -13,7 +14,7 @@ function NotificationPage() {
 		queryKey:["notifications"],
 		queryFn:async()=>{
 			try {
-				const res = await fetch("/api/notifications")
+				const res = await fetch(apiUrl+"/api/notifications")
 				const data = await res.json();
 				if(!res.ok)throw new Error(data.error || "Something went wrong");
 				return data;
@@ -25,7 +26,7 @@ function NotificationPage() {
 	const {mutate: deleteNotifications} = useMutation({
 		mutationFn:async()=>{
 			try {
-				const res = await fetch("/api/notifications",{
+				const res = await fetch(apiUrl+"/api/notifications",{
 					method:"DELETE",
 				})
 				const data = await res.json();

@@ -12,7 +12,8 @@ import {useQuery } from "@tanstack/react-query";
 import { formatMemberSinceDate } from "../../utils/db/date/index.js";
 import useFollow from "../../hooks/useFollow.jsx";
 import useUpdateProfile from "../../hooks/useUpdateProfile.jsx";
-const apiUrl = ''
+const apiUrl = 'https://tweetnest-t9oh.onrender.com'
+
 
 function ProfilePage() {
     const [coverImg, setCoverImg] = useState(null);
@@ -28,7 +29,7 @@ function ProfilePage() {
         queryKey: ["userProfile"],
         queryFn: async () => {
             try {
-                const res = await fetch(`/api/users/profile/${username}`);
+                const res = await fetch(apiUrl+`/api/users/profile/${username}`);
                 const data = await res.json();
                 if (!res.ok) {
                     throw new Error(data.error || "Something went wrong");

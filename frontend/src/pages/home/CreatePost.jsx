@@ -5,7 +5,8 @@ import { BsEmojiSmileFill } from "react-icons/bs";
 import { useMutation, useQuery, useQueryClient } from '@tanstack/react-query';
 import toast from 'react-hot-toast';
 
-const apiUrl = ''
+const apiUrl = 'https://tweetnest-t9oh.onrender.com'
+
 
 
 function CreatePost() {
@@ -19,7 +20,7 @@ function CreatePost() {
 	const {mutate:createPost, isPending, isError, error} = useMutation({
 		mutationFn:async({text, img})=>{
 			try {
-				const res = await fetch("/api/posts/create", {
+				const res = await fetch(apiUrl+"/api/posts/create", {
 					method:"POST",
 					headers: {
 						"Content-Type": "application/json",

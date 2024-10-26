@@ -4,13 +4,14 @@ import { useQuery } from '@tanstack/react-query';
 import RightPanelSkeleton from "../skeletons/RightPanelSkeleton";
 import useFollow from '../../hooks/useFollow';
 import LoadingSpinner from './LoadingSpinner';
+const apiUrl = 'https://tweetnest-t9oh.onrender.com'
 
 function RightPanel() {
     const {data:suggestedUsers, isLoading} = useQuery({
 		queryKey:["suggestedUsers"],
 		queryFn:async()=>{
 			try {
-				const res = await fetch(`/api/users/suggested`)
+				const res = await fetch(apiUrl+`/api/users/suggested`)
 				const data = await res.json();
 				if(!res.ok){
 					throw new Error(data.error || "Something went wrong");
