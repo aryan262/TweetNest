@@ -21,7 +21,8 @@ app.use(express.json({limit:"20mb"}))
 app.use(express.urlencoded({extended:true}))
 app.use(cors(
     {
-        origin: "https://social-ackend-imvo.vercel.app/"
+        origin: process.env.FRONTEND_URL,
+        credentials: true,
     }
 ));
 app.use(cookieParser())
