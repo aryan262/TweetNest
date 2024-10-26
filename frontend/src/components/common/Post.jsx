@@ -24,7 +24,7 @@ function Post({post}) {
 	const {mutate:deletePost, isPending:isDeleting} = useMutation({
 		mutationFn:async()=>{
 			try {
-				const res = await fetch(apiUrl+`api/posts/${post._id}`, {
+				const res = await fetch(apiUrl+`/api/posts/${post._id}`, {
 					method:"DELETE"
 				})
 				const data = res.json();
@@ -44,7 +44,7 @@ function Post({post}) {
 	const {mutate:likePost, isPending:isLiking} = useMutation({
 		mutationFn:async()=>{
 			try {
-				const res = await fetch(apiUrl+`api/posts/like/${post._id}`, {
+				const res = await fetch(apiUrl+`/api/posts/like/${post._id}`, {
 					method:"POST",
 				})
 				const data = await res.json();
