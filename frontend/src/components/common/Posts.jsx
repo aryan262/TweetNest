@@ -7,19 +7,19 @@ const  apiurl = import.meta.env.API_URL
 function Posts({feedType, username, userId}) {
 	const getPostEndPoint = ()=>{
 		if(feedType == "forYou"){
-			return apiurl+"/api/posts/all";
+			return "/api/posts/all";
 		}
 		else if(feedType == "following"){
-			return apiurl+"/api/posts/following";
+			return "/api/posts/following";
 		}
 		else if(feedType == "posts"){
-			return apiurl+`/api/posts/user/${username}`;
+			return `/api/posts/user/${username}`;
 		}
 		else if(feedType == "likes"){
-			return apiurl+`/api/posts/likes/${userId}`;
+			return `/api/posts/likes/${userId}`;
 		}
 		else{
-			return apiurl+"/api/posts/all";
+			return "/api/posts/all";
 		}
 	}
 	const POST_ENDPOINT = getPostEndPoint();
