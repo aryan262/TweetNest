@@ -4,7 +4,7 @@ import cookieParser from "cookie-parser";
 import authRoutes from "./routes/auth.routes.js";
 import userRoutes from "./routes/user.routes.js"
 import postRoutes from "./routes/post.routes.js"
-import notificationRoutes from "../routes/notification.routes.js"
+import notificationRoutes from "./routes/notification.routes.js"
 import connectDB from "./db/connectDB.js";
 import {v2 as cloudinary} from "cloudinary";
 import cors from "cors"
