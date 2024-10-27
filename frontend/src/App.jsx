@@ -9,7 +9,7 @@ import ProfilePage from './pages/profile/ProfilePage.jsx'
 import {Toaster} from 'react-hot-toast'
 import { useQuery } from '@tanstack/react-query'
 import LoadingSpinner from './components/common/LoadingSpinner.jsx'
-const apiUrl = 'https://tweet-nest-flame.vercel.app'
+const apiUrl = ''
 
 function App() {
 	const {data:authUser, isLoading} = useQuery({
@@ -24,7 +24,7 @@ function App() {
 				if(!res.ok){
 					throw new Error(data.error || "Something went wrong")
 				}
-				console.log("authuser is here", data);
+				// console.log("authuser is here", data);
 				return data;
 			} catch (error) {
 				throw new Error(error);

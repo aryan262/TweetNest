@@ -5,7 +5,7 @@ import { FaUser } from "react-icons/fa";
 import { FaHeart } from "react-icons/fa6";
 import { useMutation,useQuery, useQueryClient } from "@tanstack/react-query";
 import toast from "react-hot-toast";
-const apiUrl = 'https://tweet-nest-flame.vercel.app'
+const apiUrl = ''
 
 
 function NotificationPage() {

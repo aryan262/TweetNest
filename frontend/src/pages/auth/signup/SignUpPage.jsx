@@ -5,7 +5,7 @@ import { MdOutlineMail, MdPassword, MdDriveFileRenameOutline } from "react-icons
 import { FaUser } from "react-icons/fa";
 import {useMutation, useQueryClient } from "@tanstack/react-query";
 import toast from "react-hot-toast";
-const apiUrl = 'https://tweet-nest-flame.vercel.app'
+const apiUrl = ''
 
 
 function SignUpPage() {

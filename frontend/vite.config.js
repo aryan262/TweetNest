@@ -7,7 +7,7 @@ export default defineConfig({
     server: {
 		proxy: {
 			"/api": {
-				target: "https://tweetnest-t9oh.onrender.com",
+				target: "https://tweet-nest-flame.vercel.app",
 				changeOrigin: true,
 			},
 		},
