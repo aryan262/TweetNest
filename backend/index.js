@@ -32,8 +32,10 @@ app.use("/api/posts", postRoutes)
 app.use("/api/notifications", notificationRoutes)
 app.get("/api", (req, res)=>{
     res.send("Hello from server");
-}
-)
+})
+app.get("/", (req, res)=>{
+    res.send("Hello from server");
+})
 connectDB();
 
 app.listen(PORT, ()=>{
