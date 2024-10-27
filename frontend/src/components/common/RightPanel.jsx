@@ -4,7 +4,7 @@ import { useQuery } from '@tanstack/react-query';
 import RightPanelSkeleton from "../skeletons/RightPanelSkeleton";
 import useFollow from '../../hooks/useFollow';
 import LoadingSpinner from './LoadingSpinner';
-const apiUrl = 'https://tweetnest-t9oh.onrender.com'
+const apiUrl = 'https://tweet-nest-flame.vercel.app'
 
 function RightPanel() {
     const {data:suggestedUsers, isLoading} = useQuery({

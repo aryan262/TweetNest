@@ -7,7 +7,7 @@ import { Link } from "react-router-dom";
 import { BiLogOut } from "react-icons/bi";
 import { QueryClient, useMutation, useQuery, useQueryClient } from '@tanstack/react-query';
 import toast from 'react-hot-toast';
-const apiUrl = 'https://tweetnest-t9oh.onrender.com'
+const apiUrl = 'https://tweet-nest-flame.vercel.app'
 
 
 function Sidebar() {

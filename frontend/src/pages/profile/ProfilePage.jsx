@@ -12,7 +12,7 @@ import {useQuery } from "@tanstack/react-query";
 import { formatMemberSinceDate } from "../../utils/db/date/index.js";
 import useFollow from "../../hooks/useFollow.jsx";
 import useUpdateProfile from "../../hooks/useUpdateProfile.jsx";
-const apiUrl = 'https://tweetnest-t9oh.onrender.com'
+const apiUrl = 'https://tweet-nest-flame.vercel.app'
 
 
 function ProfilePage() {

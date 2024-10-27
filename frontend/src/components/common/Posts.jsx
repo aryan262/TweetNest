@@ -2,7 +2,7 @@ import React, { useEffect } from 'react'
 import Post from "./Post";
 import PostSkeleton from "../skeletons/PostSkeleton";
 import { useQuery } from '@tanstack/react-query'
-const apiUrl = 'https://tweetnest-t9oh.onrender.com'
+const apiUrl = 'https://tweet-nest-flame.vercel.app'
 
 
 function Posts({feedType, username, userId}) {

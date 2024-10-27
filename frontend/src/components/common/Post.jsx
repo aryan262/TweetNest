@@ -10,7 +10,7 @@ import { useMutation, useQuery, useQueryClient } from '@tanstack/react-query';
 import toast from 'react-hot-toast';
 import LoadingSpinner from './LoadingSpinner';
 import { formatPostDate } from '../../utils/db/date';
-const apiUrl = 'https://tweetnest-t9oh.onrender.com'
+const apiUrl = 'https://tweet-nest-flame.vercel.app'
 
 
 function Post({post}) {

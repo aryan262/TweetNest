@@ -9,7 +9,7 @@ import ProfilePage from './pages/profile/ProfilePage.jsx'
 import {Toaster} from 'react-hot-toast'
 import { useQuery } from '@tanstack/react-query'
 import LoadingSpinner from './components/common/LoadingSpinner.jsx'
-const apiUrl = 'https://tweetnest-t9oh.onrender.com'
+const apiUrl = 'https://tweet-nest-flame.vercel.app'
 
 function App() {
 	const {data:authUser, isLoading} = useQuery({
